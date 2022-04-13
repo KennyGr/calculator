@@ -2,6 +2,7 @@ let tempHolder = "0";
 let lastFunction = "";
 let tempTotal = "0";
 let displayedNumber = "0";
+let addIncrementer = 0;
 let subIncrementer = 0;
 let multIncrementer = 0;
 let divIncrementer = 0;
@@ -11,6 +12,7 @@ let clearButton = document.querySelector("#clear");
 clear.addEventListener('click', () => {
     displayedNumber = "0"
     tempTotal = "0"
+    addIncrementer = 0;
     subIncrementer = 0;
     multIncrementer = 0;
     divIncrementer = 0;
@@ -191,21 +193,31 @@ equals.addEventListener('click', evaluate);
 
 
 function addition() {
-    displayedNumber = (tempTotal - 0) + (displayedNumber - 0)
-    displayedNumberPara.textContent = displayedNumber;
-    tempTotal = displayedNumber;
-    displayedNumber = tempHolder
-    lastFunction = "+"
-    wasEqualsPush = false;
+    if (addIncrementer == 0) {
+        displayedNumberPara.textContent = displayedNumber;
+        tempTotal = displayedNumber;
+        displayedNumber = tempHolder
+        lastFunction = "+"
+        addIncrementer++;
+        wasEqualsPush = false;
+    } else {
+        displayedNumber = (tempTotal - 0) + (displayedNumber - 0)
+        displayedNumberPara.textContent = displayedNumber;
+        tempTotal = displayedNumber;
+        displayedNumber = tempHolder
+        lastFunction = "+"
+        addIncrementer++;
+        wasEqualsPush = false;
+    }
 };
 
 function subtraction() {
-    if (subIncrementer == 0) {
+    if (addIncrementer == 0) {
         displayedNumberPara.textContent = displayedNumber;
         tempTotal = displayedNumber;
         displayedNumber = tempHolder
         lastFunction = "-"
-        subIncrementer++;
+        addIncrementer++;
         wasEqualsPush = false;
     } else {
         displayedNumber = (tempTotal - 0) - (displayedNumber - 0)
@@ -213,19 +225,19 @@ function subtraction() {
         tempTotal = displayedNumber;
         displayedNumber = tempHolder
         lastFunction = "-"
-        subIncrementer++;
+        addIncrementer++;
         wasEqualsPush = false;
     }
 };
 
 //after hitting equals, hitting a number brings up 0
 function multiplication(a, b) {
-    if (multIncrementer == 0) {
+    if (addIncrementer == 0) {
         displayedNumberPara.textContent = displayedNumber;
         tempTotal = displayedNumber;
         displayedNumber = tempHolder
         lastFunction = "*"
-        multIncrementer++
+        addIncrementer++
         wasEqualsPush = false;
     } else {
         displayedNumber = (tempTotal - 0) * (displayedNumber - 0)
@@ -233,18 +245,18 @@ function multiplication(a, b) {
         tempTotal = displayedNumber;
         displayedNumber = tempHolder
         lastFunction = "*"
-        multIncrementer++
+        addIncrementer++
         wasEqualsPush = false;
     }
 };
 
 function division(a, b) {
-    if (divIncrementer == 0) {
+    if (addIncrementer == 0) {
         displayedNumberPara.textContent = displayedNumber;
         tempTotal = displayedNumber;
         displayedNumber = tempHolder;
         lastFunction = "/"
-        divIncrementer++
+        addIncrementer++
         wasEqualsPush = false;
     } else {
         displayedNumber = (tempTotal - 0) / (displayedNumber - 0)
@@ -252,7 +264,7 @@ function division(a, b) {
         tempTotal = displayedNumber;
         displayedNumber = tempHolder
         lastFunction = "/"
-        divIncrementer++
+        addIncrementer++
         wasEqualsPush = false;
     }
 };
@@ -264,7 +276,7 @@ function evaluate(a, b) {
         displayedNumberPara.textContent = displayedNumber;
         tempTotal = displayedNumber;
         wasEqualsPush = true;
-    }else if (lastFunction == "+") {
+    } else if (lastFunction == "+") {
         displayedNumber = (a - 0) + (b - 0);
         displayedNumberPara.textContent = displayedNumber;
         tempTotal = "0";
@@ -274,7 +286,7 @@ function evaluate(a, b) {
     } else if (lastFunction == "-") {
         displayedNumber = (b - 0) - (a - 0);
         displayedNumberPara.textContent = displayedNumber;
-        tempTotal = "0";
+        tempTotal = displayedNumber;
         lastFunction = "-";
         wasEqualsPush = true;
         clearIncrementers();
@@ -301,6 +313,7 @@ function clearIncrementers() {
     subIncrementer = 0;
     multIncrementer = 0;
     divIncrementer = 0;
+    addIncrementer = 0;
 }
 
 //function operate(a, c) {
