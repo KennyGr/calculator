@@ -301,76 +301,92 @@ function appendDot() {
 }
 
 function pressAdd() {
-    if (lastOperator === "+" || lastOperator === "-" || lastOperator === "*" || lastOperator === "/") {
-        secondNumber = displayedTotal;
-        firstNumber = operate();
-        displayedTotal = firstNumber;
-        displayedTotalPara.textContent = displayedTotal;
-        displayedTotal = "";
-        lastOperator = "+";
-        justPushedOperator = true;
+    if (justPushedOperator == true) {
+
     } else {
-        firstNumber = displayedTotal;
-        displayedTotalPara.textContent = displayedTotal;
-        displayedTotal = "";
-        lastOperator = "+";
-        justPushedOperator = true;
+        if (lastOperator === "+" || lastOperator === "-" || lastOperator === "*" || lastOperator === "/") {
+            secondNumber = displayedTotal;
+            firstNumber = operate();
+            displayedTotal = firstNumber;
+            displayedTotalPara.textContent = displayedTotal;
+            displayedTotal = "";
+            lastOperator = "+";
+            justPushedOperator = true;
+        } else {
+            firstNumber = displayedTotal;
+            displayedTotalPara.textContent = displayedTotal;
+            displayedTotal = "";
+            lastOperator = "+";
+            justPushedOperator = true;
+        }
     }
 }
 
 function pressSubtract() {
-    if (lastOperator === "+" || lastOperator === "-" || lastOperator === "*" || lastOperator === "/") {
-        secondNumber = displayedTotal;
-        firstNumber = operate();
-        displayedTotal = firstNumber;
-        displayedTotalPara.textContent = displayedTotal;
-        displayedTotal = "";
-        lastOperator = "-";
-        justPushedOperator = true;
+    if (justPushedOperator == true) {
+
     } else {
-        firstNumber = displayedTotal;
-        displayedTotalPara.textContent = displayedTotal;
-        displayedTotal = "";
-        lastOperator = "-";
-        justPushedOperator = true;
+        if (lastOperator === "+" || lastOperator === "-" || lastOperator === "*" || lastOperator === "/") {
+            secondNumber = displayedTotal;
+            firstNumber = operate();
+            displayedTotal = firstNumber;
+            displayedTotalPara.textContent = displayedTotal;
+            displayedTotal = "";
+            lastOperator = "-";
+            justPushedOperator = true;
+        } else {
+            firstNumber = displayedTotal;
+            displayedTotalPara.textContent = displayedTotal;
+            displayedTotal = "";
+            lastOperator = "-";
+            justPushedOperator = true;
+        }
     }
 }
 
 function pressMultiply() {
-    if (lastOperator === "+" || lastOperator === "-" || lastOperator === "*" || lastOperator === "/") {
-        secondNumber = displayedTotal;
-        firstNumber = operate();
-        displayedTotal = firstNumber;
-        displayedTotalPara.textContent = displayedTotal;
-        displayedTotal = "";
-        lastOperator = "*";
-        justPushedOperator = true;
+    if (justPushedOperator == true) {
+
     } else {
-        firstNumber = displayedTotal;
-        displayedTotalPara.textContent = displayedTotal;
-        displayedTotal = "";
-        lastOperator = "*";
-        justPushedOperator = true;
+        if (lastOperator === "+" || lastOperator === "-" || lastOperator === "*" || lastOperator === "/") {
+            secondNumber = displayedTotal;
+            firstNumber = operate();
+            displayedTotal = firstNumber;
+            displayedTotalPara.textContent = displayedTotal;
+            displayedTotal = "";
+            lastOperator = "*";
+            justPushedOperator = true;
+        } else {
+            firstNumber = displayedTotal;
+            displayedTotalPara.textContent = displayedTotal;
+            displayedTotal = "";
+            lastOperator = "*";
+            justPushedOperator = true;
+        }
     }
 }
 
 function pressDivide() {
-    if (lastOperator === "+" || lastOperator === "-" || lastOperator === "*" || lastOperator === "/") {
-        secondNumber = displayedTotal;
-        firstNumber = operate();
-        displayedTotal = firstNumber;
-        displayedTotalPara.textContent = displayedTotal;
-        displayedTotal = "";
-        lastOperator = "/";
-        justPushedOperator = true;
+    if (justPushedOperator == true) {
+
     } else {
-        firstNumber = displayedTotal;
-        displayedTotalPara.textContent = displayedTotal;
-        displayedTotal = "";
-        lastOperator = "/";
-        justPushedOperator = true;
-    }
-}
+        if (lastOperator === "+" || lastOperator === "-" || lastOperator === "*" || lastOperator === "/") {
+            secondNumber = displayedTotal;
+            firstNumber = operate();
+            displayedTotal = firstNumber;
+            displayedTotalPara.textContent = displayedTotal;
+            displayedTotal = "";
+            lastOperator = "/";
+            justPushedOperator = true;
+        } else {
+            firstNumber = displayedTotal;
+            displayedTotalPara.textContent = displayedTotal;
+            displayedTotal = "";
+            lastOperator = "/";
+            justPushedOperator = true;
+        }
+    } 
+};
 
 function pressEquals() {
     if (lastOperator == "=") {
